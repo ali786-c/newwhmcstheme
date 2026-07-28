@@ -1,31 +1,23 @@
 @import url('design-system.css');
 
 /* ==========================================================================
-   CloudHoste Scratch-Built Standalone Theme Stylesheet
+   CloudHoste Scratch-Built Standalone Master Stylesheet
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. GLOBAL ACCENTS & UTILITY CLASSES
+   1. GLOBAL UTILITY & ACCENT CLASSES
    -------------------------------------------------------------------------- */
-.text-lime {
-  color: var(--ch-lime) !important;
-}
-
-.text-indigo {
-  color: var(--ch-indigo) !important;
-}
-
-.bg-lime {
-  background-color: var(--ch-lime) !important;
-  color: #030303 !important;
-}
+.text-lime { color: var(--ch-lime) !important; }
+.text-indigo { color: var(--ch-indigo) !important; }
+.bg-lime { background-color: var(--ch-lime) !important; color: #030303 !important; }
 
 .tracking-wider {
   letter-spacing: 0.08em;
+  font-weight: 700;
   font-size: 0.85rem;
 }
 
-/* Primary Button Styling */
+/* Primary Lime Buttons */
 .btn-lime, 
 button.btn-lime, 
 a.btn-lime,
@@ -48,6 +40,29 @@ a.btn-lime:hover,
   color: #030303 !important;
   box-shadow: 0px 8px 24px rgba(196, 238, 24, 0.45) !important;
   transform: translateY(-2px) !important;
+}
+
+.btn-outline-indigo {
+  color: var(--ch-indigo) !important;
+  border: 2px solid var(--ch-indigo) !important;
+  background: transparent !important;
+}
+
+.btn-outline-indigo:hover {
+  background-color: var(--ch-indigo) !important;
+  color: #ffffff !important;
+}
+
+/* Hero Badge Pill */
+.ch-badge-pill {
+  background-color: #0b0e1a !important;
+  color: var(--ch-lime) !important;
+  border: 1px solid var(--ch-lime) !important;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(11, 14, 26, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -74,7 +89,7 @@ a.btn-lime:hover,
 }
 
 /* --------------------------------------------------------------------------
-   3. LIGHT MODE STYLING (DEFAULT)
+   3. LIGHT MODE HIGH-CONTRAST STYLING (DEFAULT)
    -------------------------------------------------------------------------- */
 body:not(.body__dark):not(.darkmode),
 html:not(.dark) body,
@@ -84,36 +99,88 @@ html[data-bs-theme="light"] body,
   color: #334155 !important;
 }
 
+/* Light Mode Headings & Subtitles */
 body:not(.body__dark):not(.darkmode) .ch-hero-title,
-body:not(.body__dark):not(.darkmode) h1, 
-body:not(.body__dark):not(.darkmode) h2, 
-body:not(.body__dark):not(.darkmode) h3, 
-body:not(.body__dark):not(.darkmode) h4, 
-body:not(.body__dark):not(.darkmode) h5, 
-body:not(.body__dark):not(.darkmode) h6 {
+body:not(.body__dark):not(.darkmode) .ch-section-heading,
+body:not(.body__dark):not(.darkmode) .ch-card-title,
+body:not(.body__dark):not(.darkmode) .ch-pillar-title {
   color: #0f172a !important;
 }
 
-/* Light Mode Cards */
+body:not(.body__dark):not(.darkmode) .ch-hero-subtitle {
+  color: #475569 !important;
+  font-weight: 500;
+  max-width: 720px;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-section-tag {
+  color: var(--ch-indigo) !important;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-section-desc,
+body:not(.body__dark):not(.darkmode) .ch-card-text,
+body:not(.body__dark):not(.darkmode) .ch-pillar-desc {
+  color: #64748b !important;
+}
+
+/* Light Mode Product Price & Icons */
+body:not(.body__dark):not(.darkmode) .ch-price-amount {
+  color: var(--ch-indigo) !important;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-card-icon i,
+body:not(.body__dark):not(.darkmode) .ch-pillar-icon i {
+  color: var(--ch-indigo) !important;
+}
+
+/* Light Mode Cards & Domain Box */
 body:not(.body__dark):not(.darkmode) .ch-card,
 body:not(.body__dark):not(.darkmode) .ch-domain-search-box,
 body:not(.body__dark):not(.darkmode) .ch-feature-pillar {
   background-color: #FFFFFF !important;
-  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-card-featured {
+  border: 2px solid var(--ch-indigo) !important;
 }
 
 body:not(.body__dark):not(.darkmode) .ch-tld-badge {
   background-color: #f1f5f9;
   color: #334155;
-  border: 1px solid #e2e8f0;
-  padding: 4px 12px;
+  border: 1px solid #cbd5e1;
+  padding: 5px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
 }
 
+body:not(.body__dark):not(.darkmode) .ch-tld-badge strong {
+  color: var(--ch-indigo);
+}
+
+body:not(.body__dark):not(.darkmode) .ch-search-input,
+body:not(.body__dark):not(.darkmode) .ch-newsletter-input {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-date-badge {
+  background-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-announcement-link {
+  color: #0f172a !important;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-readmore-link {
+  color: var(--ch-indigo) !important;
+}
+
 /* --------------------------------------------------------------------------
-   4. DARK MODE STYLING (body.body__dark & .darkmode)
+   4. DARK MODE HIGH-CONTRAST STYLING (body.body__dark & .darkmode)
    -------------------------------------------------------------------------- */
 body.body__dark,
 body.darkmode,
@@ -138,13 +205,39 @@ body.body__dark .full-page-wrapper {
 }
 
 /* Dark Mode Headings */
-body.body__dark h1, body.body__dark h2, body.body__dark h3, body.body__dark h4, body.body__dark h5, body.body__dark h6,
-body.body__dark .ch-hero-title, body.body__dark .section__title, body.body__dark .fw-bold {
+body.body__dark .ch-hero-title,
+body.body__dark .ch-section-heading,
+body.body__dark .ch-card-title,
+body.body__dark .ch-pillar-title,
+body.body__dark h1, body.body__dark h2, body.body__dark h3, 
+body.body__dark h4, body.body__dark h5, body.body__dark h6 {
   color: #ffffff !important;
 }
 
-body.body__dark p, body.body__dark span, body.body__dark div, body.body__dark li, body.body__dark small, body.body__dark label {
+body.body__dark .ch-hero-subtitle {
   color: #cbd5e1 !important;
+  font-weight: 400;
+  max-width: 720px;
+}
+
+body.body__dark .ch-section-tag {
+  color: var(--ch-lime) !important;
+}
+
+body.body__dark .ch-section-desc,
+body.body__dark .ch-card-text,
+body.body__dark .ch-pillar-desc {
+  color: #cbd5e1 !important;
+}
+
+/* Dark Mode Product Price & Icons */
+body.body__dark .ch-price-amount {
+  color: var(--ch-lime) !important;
+}
+
+body.body__dark .ch-card-icon i,
+body.body__dark .ch-pillar-icon i {
+  color: var(--ch-lime) !important;
 }
 
 /* Dark Mode Cards, Boxes & Pillars */
@@ -152,31 +245,22 @@ body.body__dark .ch-card,
 body.body__dark .ch-domain-search-box,
 body.body__dark .ch-feature-pillar,
 body.body__dark .card,
-body.body__dark .panel,
-body.body__dark .single__announcement__item {
+body.body__dark .panel {
   background-color: #13182e !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #f1f5f9 !important;
 }
 
-body.body__dark .ch-card *,
-body.body__dark .ch-domain-search-box *,
-body.body__dark .ch-feature-pillar * {
-  color: #f1f5f9 !important;
-}
-
-/* Dark Mode Card Featured Highlight */
 body.body__dark .ch-card-featured {
-  border-color: var(--ch-lime) !important;
+  border: 2px solid var(--ch-lime) !important;
   box-shadow: 0 0 20px rgba(196, 238, 24, 0.15) !important;
 }
 
-/* TLD Badges in Dark Mode */
 body.body__dark .ch-tld-badge {
   background-color: #1e2645 !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
 }
@@ -185,26 +269,24 @@ body.body__dark .ch-tld-badge strong {
   color: var(--ch-lime) !important;
 }
 
-/* Input Fields in Dark Mode */
-body.body__dark input.form-control,
-body.body__dark .form-control {
+body.body__dark .ch-search-input,
+body.body__dark .ch-newsletter-input {
   background-color: #0b0e1a !important;
   color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-body.body__dark input.form-control::placeholder {
-  color: #94a3b8 !important;
-}
-
-/* Hero Badge Pill */
-.ch-badge-pill {
-  background-color: rgba(196, 238, 24, 0.15) !important;
+body.body__dark .ch-date-badge {
+  background-color: #1e2645 !important;
   color: var(--ch-lime) !important;
-  border: 1px solid var(--ch-lime) !important;
-  padding: 6px 16px;
-  border-radius: 30px;
-  font-size: 0.85rem;
+}
+
+body.body__dark .ch-announcement-link {
+  color: #ffffff !important;
+}
+
+body.body__dark .ch-readmore-link {
+  color: var(--ch-lime) !important;
 }
 
 /* Dark Mode Footer */
