@@ -2,12 +2,33 @@
 
 	<div class="website__identity__sidebar d-flex align-items-center justify-content-start mb-8">		
 		<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-start gap-10" href="https://cloudhoste.eu">
-			{if $assetLogoPath}
-				<img class="image__logo__tagline white__logo" src="{$assetLogoPath}" alt="{$companyname}" style="height: 38px;" />
-				<img class="image__logo__tagline dark__logo" src="{$assetLogoPath}" alt="{$companyname}" style="height: 38px;" />
+			{if $coodivsettings.siteaslogo|default:''=='activated'}
+				<div class="website__identity__sidebar__text__logo__wrapper">
+					<span class="website__identity__sidebar__text__logo__first__later">
+						<span id="websiteidenditytextlogofirst">
+							{if $coodivsettings.customtextlogo|default:'' == null}
+								{$companyname}
+							{else}
+								{$coodivsettings.customtextlogo|default:''}
+							{/if}
+						</span>
+					</span>
+					<span id="websiteidenditytextlogofull" class="website__identity__sidebar__text__logo__full">
+						{if $coodivsettings.customtextlogo|default:'' == null}
+							{$companyname}
+						{else}
+							{$coodivsettings.customtextlogo|default:''}
+						{/if}
+					</span>
+				</div>
 			{else}
-				<img class="image__logo__tagline white__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px;" />
-				<img class="image__logo__tagline dark__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px;" />
+				{if $coodivsettings.defaultlogolinkfull|default:''}
+					<img class="image__logo__tagline white__logo custom__website__full__logo" src="{$coodivsettings.defaultlogolinkfull|default:''}" alt="{$companyname} logo" />
+					<img class="image__logo__tagline dark__logo custom__website__full__logo" src="{$coodivsettings.darklogolinkfull|default:''}" alt="{$companyname} logo" />
+				{else}
+					<img class="image__logo__tagline white__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px;" />
+					<img class="image__logo__tagline dark__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px;" />
+				{/if}
 			{/if}
 		</a>
 	</div>
@@ -27,16 +48,17 @@
 					</span>
 					<div class="login__register__sidebar__content__announcements__item__desc">
 						{assign var="plainannouncementtext" value=$announcement.text|strip_tags}
-						{$plainannouncementtext|truncate:250}
+						{$plainannouncementtext|truncate:150:"..."}
+					</div>
+				</div>
+			{foreachelse}
+				<div class="login__register__sidebar__content__announcements__item">
+					<div class="login__register__sidebar__content__announcements__item__desc">
+						{lang key='noannouncements'}
 					</div>
 				</div>
 			{/foreach}
 		</div>
 	</div>
-	
-	<ul class="footer__copyright__social__accounts justify-content-start mt-8">
-		{foreach $socialAccounts as $account}
-			<li><a target="_blank" href="{$account->getUrl()}"><i class="{$account->getFontAwesomeIcon()}"></i></a></li>
-		{/foreach}
-	</ul>
+
 </div>
