@@ -32,9 +32,8 @@
 {assetExists file="custom.css"}
 <link href="{$__assetPath__}" rel="stylesheet">
 {/assetExists}
-{if $coodivsettings.customcsscode|default:'' != null}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/custom.css?v={$coodivsettings.customcss_version|default:''}">
-{/if}
+<link rel="stylesheet" media="all" href="{$WEB_ROOT}/templates/{$template}/assets/css/custom.css?v={$shuffythemeversion}">
+<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/custom.css?v={$shuffythemeversion}">
 {if $coodivhomepagesettings.id|default:'' == '1'}
 <link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/homepage-plans.css?v={$coodivsettings.customcss_version|default:''}">
 {/if}
