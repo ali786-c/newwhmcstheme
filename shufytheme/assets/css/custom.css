@@ -1,65 +1,53 @@
 @import url('design-system.css');
 
 /* ==========================================================================
-   CloudHoste WHMCS Master Standalone Stylesheet & Dark Mode Overhauls
+   CloudHoste Scratch-Built Standalone Theme Stylesheet
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. BUTTONS & INTERACTIVE ELEMENTS
+   1. GLOBAL ACCENTS & UTILITY CLASSES
    -------------------------------------------------------------------------- */
-.btn-primary, 
-button.btn-primary, 
-a.btn-primary,
-input[type="submit"].btn-primary,
-.add__new__group__btn,
-.btn-lime {
+.text-lime {
+  color: var(--ch-lime) !important;
+}
+
+.text-indigo {
+  color: var(--ch-indigo) !important;
+}
+
+.bg-lime {
+  background-color: var(--ch-lime) !important;
+  color: #030303 !important;
+}
+
+.tracking-wider {
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+/* Primary Button Styling */
+.btn-lime, 
+button.btn-lime, 
+a.btn-lime,
+.btn-primary {
   background-color: var(--ch-lime) !important;
   border-color: var(--ch-lime) !important;
   color: #030303 !important;
   font-family: var(--ch-font-body);
-  font-weight: 600 !important;
-  border-radius: 24px !important;
+  font-weight: 700 !important;
   box-shadow: 0px 4px 18px var(--ch-lime-glow) !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.btn-primary:hover, 
-button.btn-primary:hover, 
-a.btn-primary:hover,
-input[type="submit"].btn-primary:hover,
-.add__new__group__btn:hover,
-.btn-lime:hover {
+.btn-lime:hover, 
+button.btn-lime:hover, 
+a.btn-lime:hover,
+.btn-primary:hover {
   background-color: var(--ch-lime-hover) !important;
   border-color: var(--ch-lime-hover) !important;
   color: #030303 !important;
   box-shadow: 0px 8px 24px rgba(196, 238, 24, 0.45) !important;
   transform: translateY(-2px) !important;
-}
-
-/* Secondary Buttons */
-.btn-secondary,
-a.btn-secondary,
-.btn-outline-primary {
-  background-color: var(--ch-indigo) !important;
-  border-color: var(--ch-indigo) !important;
-  color: #ffffff !important;
-  border-radius: 24px !important;
-}
-
-.btn-secondary:hover,
-.btn-outline-primary:hover {
-  background-color: var(--ch-indigo-hover) !important;
-  border-color: var(--ch-indigo-hover) !important;
-  color: #ffffff !important;
-}
-
-/* Links & Accents */
-a, .coodiv-text-primary {
-  color: var(--ch-indigo) !important;
-}
-
-a:hover {
-  color: var(--ch-indigo-hover) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -86,35 +74,46 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   3. LIGHT MODE STYLING & CANVAS
+   3. LIGHT MODE STYLING (DEFAULT)
    -------------------------------------------------------------------------- */
 body:not(.body__dark):not(.darkmode),
 html:not(.dark) body,
 html[data-bs-theme="light"] body,
 [data-theme="light"] body {
   background-color: var(--ch-slate-light) !important;
-  color: var(--ch-text-light-secondary) !important;
+  color: #334155 !important;
 }
 
+body:not(.body__dark):not(.darkmode) .ch-hero-title,
 body:not(.body__dark):not(.darkmode) h1, 
 body:not(.body__dark):not(.darkmode) h2, 
 body:not(.body__dark):not(.darkmode) h3, 
 body:not(.body__dark):not(.darkmode) h4, 
 body:not(.body__dark):not(.darkmode) h5, 
 body:not(.body__dark):not(.darkmode) h6 {
-  color: var(--ch-text-light-primary) !important;
+  color: #0f172a !important;
 }
 
-body:not(.body__dark):not(.darkmode) .card,
-body:not(.body__dark):not(.darkmode) .panel,
-[data-theme="light"] .card {
-  background-color: var(--ch-surface-card-light) !important;
-  border: 1px solid var(--ch-border-light) !important;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+/* Light Mode Cards */
+body:not(.body__dark):not(.darkmode) .ch-card,
+body:not(.body__dark):not(.darkmode) .ch-domain-search-box,
+body:not(.body__dark):not(.darkmode) .ch-feature-pillar {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important;
+}
+
+body:not(.body__dark):not(.darkmode) .ch-tld-badge {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
 }
 
 /* --------------------------------------------------------------------------
-   4. COMPREHENSIVE DARK MODE HIGH-CONTRAST OVERRIDES (body.body__dark)
+   4. DARK MODE STYLING (body.body__dark & .darkmode)
    -------------------------------------------------------------------------- */
 body.body__dark,
 body.darkmode,
@@ -124,157 +123,95 @@ html[data-bs-theme="dark"] body,
 body[data-theme="dark"],
 .body__dark {
   background-color: #0b0e1a !important;
-  color: #e2e8f0 !important;
+  color: #cbd5e1 !important;
 }
 
 /* Dark Mode Canvas Containers */
 body.body__dark #mainpagewrapper,
 body.body__dark .header,
 body.body__dark .homepage__main__wrapper,
-body.body__dark .main__page__content,
-body.body__dark .full__with__section,
-body.body__dark .page__container,
+body.body__dark .ch-homepage-wrapper,
 body.body__dark .hero-section,
-body.body__dark .promo-slider-banner,
-body.body__dark .full-page-wrapper,
-body.darkmode #mainpagewrapper,
-body.darkmode .header,
-body.darkmode .homepage__main__wrapper {
+body.body__dark .full-page-wrapper {
   background-color: #0b0e1a !important;
-  color: #e2e8f0 !important;
-}
-
-/* Dark Mode Headings & Titles across ALL sections */
-body.body__dark h1, body.body__dark h2, body.body__dark h3, body.body__dark h4, body.body__dark h5, body.body__dark h6,
-body.body__dark .h1, body.body__dark .h2, body.body__dark .h3, body.body__dark .h4, body.body__dark .h5, body.body__dark .h6,
-body.body__dark .title, body.body__dark .section-title, body.body__dark .main-title,
-body.body__dark .section__title, body.body__dark .element__title,
-body.body__dark .sub-title, body.body__dark .subtitle, body.body__dark .section__subtitle,
-body.body__dark .header-text, body.body__dark .heading-text,
-body.body__dark .announcement__title, body.body__dark .sub__title,
-body.body__dark .marketconnect-title, body.body__dark .mc-title,
-body.darkmode h1, body.darkmode h2, body.darkmode h3, body.darkmode h4, body.darkmode h5, body.darkmode h6,
-body.darkmode .section__title, body.darkmode .announcement__title {
-  color: #ffffff !important;
-}
-
-/* Dark Mode Body Texts, Paragraphs & Labels */
-body.body__dark p, body.body__dark span, body.body__dark div, body.body__dark li, body.body__dark small, body.body__dark label,
-body.darkmode p, body.darkmode span, body.darkmode div, body.darkmode li, body.darkmode small, body.darkmode label {
   color: #cbd5e1 !important;
 }
 
-/* Dark Mode Links & TLD badges (.com, .net, .org) */
-body.body__dark a,
-body.body__dark .tld-item,
-body.body__dark .tld-name,
-body.body__dark .domain-tld,
-body.body__dark .coodiv-text-primary,
-body.darkmode a {
-  color: #C4EE18 !important;
-}
-
-body.body__dark a:hover {
-  color: #B8D61A !important;
-}
-
-/* Dark Mode MarketConnect Tabs & Promo Navigation */
-body.body__dark .promo-slider-banner-nav,
-body.body__dark .promo-slider-banner-nav .nav-link,
-body.body__dark .marketconnect-banner-item,
-body.body__dark .nav-tabs .nav-link,
-body.darkmode .promo-slider-banner-nav .nav-link {
-  background-color: #13182e !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-body.body__dark .promo-slider-banner-nav .nav-link *,
-body.body__dark .marketconnect-banner-item * {
+/* Dark Mode Headings */
+body.body__dark h1, body.body__dark h2, body.body__dark h3, body.body__dark h4, body.body__dark h5, body.body__dark h6,
+body.body__dark .ch-hero-title, body.body__dark .section__title, body.body__dark .fw-bold {
   color: #ffffff !important;
 }
 
-body.body__dark .promo-slider-banner-nav .nav-link.active,
-body.body__dark .nav-tabs .nav-link.active,
-body.body__dark .marketconnect-banner-item.active {
-  background-color: #1e2645 !important;
-  border-color: #C4EE18 !important;
-  color: #C4EE18 !important;
+body.body__dark p, body.body__dark span, body.body__dark div, body.body__dark li, body.body__dark small, body.body__dark label {
+  color: #cbd5e1 !important;
 }
 
-body.body__dark .promo-slider-banner-nav .nav-link.active *,
-body.body__dark .marketconnect-banner-item.active * {
-  color: #C4EE18 !important;
-}
-
-/* Dark Mode Cards, Panels, 4 Infrastructure Pillars & Announcement Boxes */
+/* Dark Mode Cards, Boxes & Pillars */
+body.body__dark .ch-card,
+body.body__dark .ch-domain-search-box,
+body.body__dark .ch-feature-pillar,
 body.body__dark .card,
 body.body__dark .panel,
-body.body__dark .box,
-body.body__dark .feature-box,
-body.body__dark .promo-box,
-body.body__dark .announcement-single-item,
-body.body__dark .single__announcement__item,
-body.body__dark .circular-card-list__item,
-body.body__dark .circular-card-list__item .card,
-body.body__dark .mc-banner,
-body.body__dark .promo__banner__item,
-body.body__dark .domain-search-bg,
-body.body__dark .front-products .product-card,
-body.body__dark .main__homepage__services__grid .main__homepage__services__grid__element,
-body.darkmode .card,
-body.darkmode .panel,
-body.darkmode .circular-card-list__item .card {
+body.body__dark .single__announcement__item {
   background-color: #13182e !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #f1f5f9 !important;
 }
 
-body.body__dark .card *,
-body.body__dark .panel *,
-body.body__dark .circular-card-list__item *,
-body.body__dark .single__announcement__item * {
+body.body__dark .ch-card *,
+body.body__dark .ch-domain-search-box *,
+body.body__dark .ch-feature-pillar * {
   color: #f1f5f9 !important;
 }
 
-body.body__dark .single__announcement__item h5,
-body.body__dark .single__announcement__item a.announcement__title {
+/* Dark Mode Card Featured Highlight */
+body.body__dark .ch-card-featured {
+  border-color: var(--ch-lime) !important;
+  box-shadow: 0 0 20px rgba(196, 238, 24, 0.15) !important;
+}
+
+/* TLD Badges in Dark Mode */
+body.body__dark .ch-tld-badge {
+  background-color: #1e2645 !important;
   color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
 }
 
-/* Dark Mode Sidebar Navigation */
-body.body__dark .sidebar,
-body.body__dark .sidebar__container,
-body.body__dark .minimal__sidebar {
-  background-color: #090c17 !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+body.body__dark .ch-tld-badge strong {
+  color: var(--ch-lime) !important;
 }
 
-body.body__dark .sidebar__item,
-body.body__dark .side__bar__item__text,
-body.body__dark .side__bar__item__icon,
-body.body__dark .sidebar a {
-  color: #cbd5e1 !important;
+/* Input Fields in Dark Mode */
+body.body__dark input.form-control,
+body.body__dark .form-control {
+  background-color: #0b0e1a !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-body.body__dark .sidebar__item:hover,
-body.body__dark .sidebar__item.active {
-  color: #C4EE18 !important;
-  background-color: rgba(196, 238, 24, 0.1) !important;
+body.body__dark input.form-control::placeholder {
+  color: #94a3b8 !important;
 }
 
-body.body__dark .sidebar__item:hover .side__bar__item__icon,
-body.body__dark .sidebar__item.active .side__bar__item__icon {
-  color: #C4EE18 !important;
+/* Hero Badge Pill */
+.ch-badge-pill {
+  background-color: rgba(196, 238, 24, 0.15) !important;
+  color: var(--ch-lime) !important;
+  border: 1px solid var(--ch-lime) !important;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
 }
 
-/* Dark Mode Footer (Uniform Dark Canvas) */
+/* Dark Mode Footer */
 body.body__dark .main__footer__wrapper,
 body.body__dark .bottom__footer__wrapper,
 body.body__dark footer,
-body.body__dark .footer,
-body.darkmode .main__footer__wrapper,
-body.darkmode .bottom__footer__wrapper {
+body.body__dark .footer {
   background-color: #070a14 !important;
   color: #94a3b8 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -287,26 +224,5 @@ body.body__dark .bottom__footer__wrapper * {
 
 body.body__dark .main__footer__wrapper a:hover,
 body.body__dark .bottom__footer__wrapper a:hover {
-  color: #C4EE18 !important;
-}
-
-/* --------------------------------------------------------------------------
-   5. STATUS BADGES & TABLE INDICATORS
-   -------------------------------------------------------------------------- */
-.badge-success, .status-active, .label-active {
-  background-color: rgba(196, 238, 24, 0.2) !important;
-  color: #C4EE18 !important;
-  border: 1px solid #C4EE18 !important;
-}
-
-.badge-warning, .status-pending, .label-pending {
-  background-color: rgba(234, 179, 8, 0.2) !important;
-  color: #eab308 !important;
-  border: 1px solid #eab308 !important;
-}
-
-.badge-danger, .status-terminated, .label-terminated {
-  background-color: rgba(239, 68, 68, 0.2) !important;
-  color: #ef4444 !important;
-  border: 1px solid #ef4444 !important;
+  color: var(--ch-lime) !important;
 }
