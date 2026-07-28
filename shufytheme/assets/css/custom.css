@@ -1,0 +1,112 @@
+@import url('design-system.css');
+
+/* ==========================================================================
+   CloudHoste WHMCS Design System & Dual Mode Overrides
+   ========================================================================== */
+
+/* Buttons */
+.btn-primary, 
+button.btn-primary, 
+a.btn-primary,
+input[type="submit"].btn-primary,
+.add__new__group__btn {
+  background-color: var(--ch-lime) !important;
+  border-color: var(--ch-lime) !important;
+  color: #030303 !important;
+  font-family: var(--ch-font-body);
+  font-weight: 600 !important;
+  border-radius: 24px !important;
+  box-shadow: 0px 4px 18px var(--ch-lime-glow) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-primary:hover, 
+button.btn-primary:hover, 
+a.btn-primary:hover,
+input[type="submit"].btn-primary:hover,
+.add__new__group__btn:hover {
+  background-color: var(--ch-lime-hover) !important;
+  border-color: var(--ch-lime-hover) !important;
+  color: #030303 !important;
+  box-shadow: 0px 8px 24px rgba(196, 238, 24, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Links & Accents */
+a, .coodiv-text-primary {
+  color: var(--ch-indigo) !important;
+}
+
+a:hover {
+  color: var(--ch-indigo-hover) !important;
+}
+
+/* Circular Card List Styling */
+.circular-card-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.circular-card-list__item {
+  flex: 1 1 240px;
+  max-width: 280px;
+  min-height: 180px;
+}
+
+/* Dark Mode Canvas */
+body.darkmode,
+html.dark body,
+html[data-bs-theme="dark"] body,
+[data-theme="dark"] body {
+  background-color: var(--ch-navy) !important;
+  color: var(--ch-text-body) !important;
+}
+
+body.darkmode .card,
+body.darkmode .panel,
+[data-theme="dark"] .card {
+  background-color: var(--ch-surface-card) !important;
+  border: 1px solid var(--ch-border-subtle) !important;
+}
+
+/* Light Mode Canvas */
+body:not(.darkmode),
+html:not(.dark) body,
+html[data-bs-theme="light"] body,
+[data-theme="light"] body {
+  background-color: var(--ch-slate-light, #F8FAFC) !important;
+  color: #334155 !important;
+}
+
+body:not(.darkmode) .card,
+body:not(.darkmode) .panel,
+[data-theme="light"] .card {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Disable hover movement/jumping on header and footer logos */
+.website__identity__sidebar__link,
+.website__identity__sidebar__link:hover,
+.website__identity__sidebar__link:focus,
+.website__identity__sidebar__link:active,
+.website__identity__sidebar__link img,
+.website__identity__sidebar__link img:hover,
+.website__identity__sidebar,
+.website__identity__sidebar:hover,
+.footer__logo__wrapper a,
+.footer__logo__wrapper a:hover,
+.footer__logo__wrapper a img,
+.footer__logo__wrapper a img:hover {
+  transform: none !important;
+  transition: none !important;
+  margin-top: 0 !important;
+  top: 0 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
