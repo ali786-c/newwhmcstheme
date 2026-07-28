@@ -1,7 +1,7 @@
 @import url('design-system.css');
 
 /* ==========================================================================
-   CloudHoste WHMCS Standalone Master Stylesheet
+   CloudHoste WHMCS Master Standalone Stylesheet & Dark Mode Overhauls
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -38,14 +38,16 @@ input[type="submit"].btn-primary:hover,
 
 /* Secondary Buttons */
 .btn-secondary,
-a.btn-secondary {
+a.btn-secondary,
+.btn-outline-primary {
   background-color: var(--ch-indigo) !important;
   border-color: var(--ch-indigo) !important;
   color: #ffffff !important;
   border-radius: 24px !important;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-outline-primary:hover {
   background-color: var(--ch-indigo-hover) !important;
   border-color: var(--ch-indigo-hover) !important;
   color: #ffffff !important;
@@ -108,54 +110,114 @@ body:not(.darkmode) .panel,
 }
 
 /* --------------------------------------------------------------------------
-   4. COMPREHENSIVE DARK MODE HIGH-CONTRAST STYLING
+   4. COMPREHENSIVE DARK MODE HIGH-CONTRAST OVERRIDES
    -------------------------------------------------------------------------- */
 body.darkmode,
 html.dark body,
 html[data-bs-theme="dark"] body,
-[data-theme="dark"] body {
-  background-color: var(--ch-navy) !important;
-  color: var(--ch-text-dark-secondary) !important;
+[data-theme="dark"] body,
+body[data-theme="dark"],
+.darkmode {
+  background-color: #0b0e1a !important;
+  color: #e2e8f0 !important;
 }
 
-/* Dark Mode Headings & Titles */
+/* Dark Mode Canvas Containers */
+body.darkmode .header,
+body.darkmode .homepage__main__wrapper,
+body.darkmode .main__page__content,
+body.darkmode .full__with__section,
+body.darkmode .page__container,
+body.darkmode .hero-section,
+body.darkmode .promo-slider-banner,
+body.darkmode .full-page-wrapper,
+body.darkmode #mainpagewrapper {
+  background-color: #0b0e1a !important;
+  color: #e2e8f0 !important;
+}
+
+/* Dark Mode Headings & Titles across ALL sections */
 body.darkmode h1, body.darkmode h2, body.darkmode h3, body.darkmode h4, body.darkmode h5, body.darkmode h6,
 body.darkmode .h1, body.darkmode .h2, body.darkmode .h3, body.darkmode .h4, body.darkmode .h5, body.darkmode .h6,
 body.darkmode .title, body.darkmode .section-title, body.darkmode .main-title,
 body.darkmode .section__title, body.darkmode .element__title,
 body.darkmode .sub-title, body.darkmode .subtitle, body.darkmode .section__subtitle,
 body.darkmode .header-text, body.darkmode .heading-text,
-body.darkmode .announcement__title, body.darkmode .sub__title {
-  color: var(--ch-text-dark-primary) !important;
+body.darkmode .announcement__title, body.darkmode .sub__title,
+body.darkmode .marketconnect-title, body.darkmode .mc-title {
+  color: #ffffff !important;
 }
 
-/* Dark Mode Text Body & Labels */
+/* Dark Mode Body Texts, Paragraphs & Labels */
 body.darkmode p, body.darkmode span, body.darkmode div, body.darkmode li, body.darkmode small, body.darkmode label {
-  color: var(--ch-text-dark-secondary);
+  color: #cbd5e1;
 }
 
-/* Dark Mode Cards, Panels, Boxes & Announcements */
+/* Dark Mode Links & TLD badges (.com, .net, .org) */
+body.darkmode a,
+body.darkmode .tld-item,
+body.darkmode .tld-name,
+body.darkmode .domain-tld,
+body.darkmode .coodiv-text-primary {
+  color: #C4EE18 !important;
+}
+
+body.darkmode a:hover {
+  color: #B8D61A !important;
+}
+
+/* Dark Mode MarketConnect Tabs & Promo Navigation */
+body.darkmode .promo-slider-banner-nav,
+body.darkmode .promo-slider-banner-nav .nav-link,
+body.darkmode .marketconnect-banner-item,
+body.darkmode .nav-tabs .nav-link {
+  background-color: #13182e !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.darkmode .promo-slider-banner-nav .nav-link *,
+body.darkmode .marketconnect-banner-item * {
+  color: #ffffff !important;
+}
+
+body.darkmode .promo-slider-banner-nav .nav-link.active,
+body.darkmode .nav-tabs .nav-link.active,
+body.darkmode .marketconnect-banner-item.active {
+  background-color: #1e2645 !important;
+  border-color: #C4EE18 !important;
+  color: #C4EE18 !important;
+}
+
+body.darkmode .promo-slider-banner-nav .nav-link.active *,
+body.darkmode .marketconnect-banner-item.active * {
+  color: #C4EE18 !important;
+}
+
+/* Dark Mode Cards, Panels, 4 Infrastructure Pillars & Announcement Boxes */
 body.darkmode .card,
 body.darkmode .panel,
 body.darkmode .box,
 body.darkmode .feature-box,
 body.darkmode .promo-box,
 body.darkmode .announcement-single-item,
-body.darkmode .marketconnect-banner-item,
 body.darkmode .single__announcement__item,
+body.darkmode .circular-card-list__item,
+body.darkmode .circular-card-list__item .card,
 body.darkmode .mc-banner,
 body.darkmode .promo__banner__item,
-body.darkmode .list-group-item,
-body.darkmode .table {
-  background-color: var(--ch-surface-card-dark) !important;
-  border: 1px solid var(--ch-border-dark) !important;
-  color: var(--ch-text-dark-secondary) !important;
+body.darkmode .domain-search-bg,
+body.darkmode .front-products .product-card {
+  background-color: #13182e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f1f5f9 !important;
 }
 
 body.darkmode .card *,
 body.darkmode .panel *,
+body.darkmode .circular-card-list__item *,
 body.darkmode .single__announcement__item * {
-  color: var(--ch-text-dark-secondary) !important;
+  color: #f1f5f9 !important;
 }
 
 body.darkmode .single__announcement__item h5,
@@ -175,38 +237,38 @@ body.darkmode .sidebar__item,
 body.darkmode .side__bar__item__text,
 body.darkmode .side__bar__item__icon,
 body.darkmode .sidebar a {
-  color: var(--ch-text-dark-secondary) !important;
+  color: #cbd5e1 !important;
 }
 
 body.darkmode .sidebar__item:hover,
 body.darkmode .sidebar__item.active {
-  color: var(--ch-lime) !important;
+  color: #C4EE18 !important;
   background-color: rgba(196, 238, 24, 0.1) !important;
 }
 
 body.darkmode .sidebar__item:hover .side__bar__item__icon,
 body.darkmode .sidebar__item.active .side__bar__item__icon {
-  color: var(--ch-lime) !important;
+  color: #C4EE18 !important;
 }
 
-/* Dark Mode Tabs & Navigation */
-body.darkmode .nav-tabs .nav-link,
-body.darkmode .promo-slider-banner-nav .nav-link {
-  background-color: var(--ch-surface-card-dark) !important;
-  color: #ffffff !important;
-  border-color: var(--ch-border-dark) !important;
+/* Dark Mode Footer (Uniform Dark Canvas) */
+body.darkmode .main__footer__wrapper,
+body.darkmode .bottom__footer__wrapper,
+body.darkmode footer,
+body.darkmode .footer {
+  background-color: #070a14 !important;
+  color: #94a3b8 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-body.darkmode .nav-tabs .nav-link.active,
-body.darkmode .promo-slider-banner-nav .nav-link.active {
-  background-color: #1e2645 !important;
-  color: var(--ch-lime) !important;
-  border-color: var(--ch-lime) !important;
+body.darkmode .main__footer__wrapper *,
+body.darkmode .bottom__footer__wrapper * {
+  color: #94a3b8 !important;
 }
 
-body.darkmode .nav-tabs .nav-link.active *,
-body.darkmode .promo-slider-banner-nav .nav-link.active * {
-  color: var(--ch-lime) !important;
+body.darkmode .main__footer__wrapper a:hover,
+body.darkmode .bottom__footer__wrapper a:hover {
+  color: #C4EE18 !important;
 }
 
 /* --------------------------------------------------------------------------
