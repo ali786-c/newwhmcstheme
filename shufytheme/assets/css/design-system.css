@@ -1,0 +1,33 @@
+/* ==========================================================================
+   CloudHoste WHMCS Global CSS Design Tokens & Variables
+   ========================================================================== */
+:root {
+  /* Brand Primary Colors */
+  --ch-lime: #C4EE18;
+  --ch-lime-hover: #B8D61A;
+  --ch-lime-glow: rgba(196, 238, 24, 0.35);
+  
+  /* Brand Secondary Colors */
+  --ch-indigo: #4942E4;
+  --ch-indigo-hover: #3b35cd;
+  
+  /* Neutral Dark Mode Palette */
+  --ch-navy: #0b0e1a;
+  --ch-surface-card-dark: #13182e;
+  --ch-border-dark: rgba(255, 255, 255, 0.1);
+  --ch-text-dark-primary: #ffffff;
+  --ch-text-dark-secondary: #cbd5e1;
+  --ch-text-dark-muted: #94a3b8;
+  
+  /* Neutral Light Mode Palette */
+  --ch-slate-light: #F8FAFC;
+  --ch-surface-card-light: #FFFFFF;
+  --ch-border-light: rgba(15, 23, 42, 0.12);
+  --ch-text-light-primary: #0f172a;
+  --ch-text-light-secondary: #334155;
+  --ch-text-light-muted: #64748b;
+  
+  /* Typography */
+  --ch-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --ch-font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+}
