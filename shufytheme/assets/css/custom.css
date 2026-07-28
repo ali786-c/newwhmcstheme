@@ -58,22 +58,6 @@ a:hover {
   min-height: 180px;
 }
 
-/* Dark Mode Canvas */
-body.darkmode,
-html.dark body,
-html[data-bs-theme="dark"] body,
-[data-theme="dark"] body {
-  background-color: var(--ch-navy) !important;
-  color: var(--ch-text-body) !important;
-}
-
-body.darkmode .card,
-body.darkmode .panel,
-[data-theme="dark"] .card {
-  background-color: var(--ch-surface-card) !important;
-  border: 1px solid var(--ch-border-subtle) !important;
-}
-
 /* Light Mode Canvas */
 body:not(.darkmode),
 html:not(.dark) body,
@@ -109,4 +93,106 @@ body:not(.darkmode) .panel,
   top: 0 !important;
   text-decoration: none !important;
   box-shadow: none !important;
+}
+
+/* ==========================================================================
+   Comprehensive High-Contrast Dark Mode Overrides
+   ========================================================================== */
+body.darkmode,
+html.dark body,
+html[data-bs-theme="dark"] body,
+[data-theme="dark"] body {
+  background-color: #0b0e1a !important;
+  color: #e2e8f0 !important;
+}
+
+/* Dark Mode Headings */
+body.darkmode h1, body.darkmode h2, body.darkmode h3, body.darkmode h4, body.darkmode h5, body.darkmode h6,
+body.darkmode .h1, body.darkmode .h2, body.darkmode .h3, body.darkmode .h4, body.darkmode .h5, body.darkmode .h6,
+body.darkmode .title, body.darkmode .section-title, body.darkmode .main-title,
+body.darkmode .section__title, body.darkmode .element__title,
+body.darkmode .sub-title, body.darkmode .subtitle, body.darkmode .section__subtitle,
+body.darkmode .header-text, body.darkmode .heading-text {
+  color: #ffffff !important;
+}
+
+/* Dark Mode Body Texts & Labels */
+body.darkmode p, body.darkmode span, body.darkmode div, body.darkmode li, body.darkmode small, body.darkmode label {
+  color: #cbd5e1;
+}
+
+/* Section Subtitles & News Announcement Headers in Dark Mode */
+body.darkmode .section__subtitle,
+body.darkmode .sub__title,
+body.darkmode .announcement__title,
+body.darkmode .latest__announcements__wrapper * {
+  color: #f1f5f9 !important;
+}
+
+/* Dark Mode Cards, Panels, MarketConnect & Feature Items */
+body.darkmode .card,
+body.darkmode .panel,
+body.darkmode .box,
+body.darkmode .feature-box,
+body.darkmode .promo-box,
+body.darkmode .announcement-single-item,
+body.darkmode .marketconnect-banner-item,
+body.darkmode .single__announcement__item,
+body.darkmode .mc-banner,
+body.darkmode .promo__banner__item {
+  background-color: #13182e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f1f5f9 !important;
+}
+
+body.darkmode .card *,
+body.darkmode .panel *,
+body.darkmode .single__announcement__item * {
+  color: #f1f5f9 !important;
+}
+
+/* Dark Mode Sidebar Navigation Links & Icons */
+body.darkmode .sidebar,
+body.darkmode .sidebar__container,
+body.darkmode .minimal__sidebar {
+  background-color: #090c17 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.darkmode .sidebar__item,
+body.darkmode .side__bar__item__text,
+body.darkmode .side__bar__item__icon,
+body.darkmode .sidebar a {
+  color: #cbd5e1 !important;
+}
+
+body.darkmode .sidebar__item:hover,
+body.darkmode .sidebar__item.active {
+  color: var(--ch-lime) !important;
+  background-color: rgba(196, 238, 24, 0.1) !important;
+}
+
+body.darkmode .sidebar__item:hover .side__bar__item__icon,
+body.darkmode .sidebar__item.active .side__bar__item__icon {
+  color: var(--ch-lime) !important;
+}
+
+/* MarketConnect Tabs in Dark Mode */
+body.darkmode .nav-tabs .nav-link,
+body.darkmode .promo-slider-banner-nav .nav-link {
+  background-color: #13182e !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.darkmode .nav-tabs .nav-link.active,
+body.darkmode .promo-slider-banner-nav .nav-link.active {
+  background-color: #1e2645 !important;
+  color: var(--ch-lime) !important;
+  border-color: var(--ch-lime) !important;
+}
+
+body.darkmode .nav-tabs .nav-link.active *,
+body.darkmode .promo-slider-banner-nav .nav-link.active * {
+  color: var(--ch-lime) !important;
 }
