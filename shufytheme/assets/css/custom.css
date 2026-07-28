@@ -88,7 +88,7 @@ a:hover {
 /* --------------------------------------------------------------------------
    3. LIGHT MODE STYLING & CANVAS
    -------------------------------------------------------------------------- */
-body:not(.darkmode),
+body:not(.body__dark):not(.darkmode),
 html:not(.dark) body,
 html[data-bs-theme="light"] body,
 [data-theme="light"] body {
@@ -96,13 +96,17 @@ html[data-bs-theme="light"] body,
   color: var(--ch-text-light-secondary) !important;
 }
 
-body:not(.darkmode) h1, body:not(.darkmode) h2, body:not(.darkmode) h3, 
-body:not(.darkmode) h4, body:not(.darkmode) h5, body:not(.darkmode) h6 {
+body:not(.body__dark):not(.darkmode) h1, 
+body:not(.body__dark):not(.darkmode) h2, 
+body:not(.body__dark):not(.darkmode) h3, 
+body:not(.body__dark):not(.darkmode) h4, 
+body:not(.body__dark):not(.darkmode) h5, 
+body:not(.body__dark):not(.darkmode) h6 {
   color: var(--ch-text-light-primary) !important;
 }
 
-body:not(.darkmode) .card,
-body:not(.darkmode) .panel,
+body:not(.body__dark):not(.darkmode) .card,
+body:not(.body__dark):not(.darkmode) .panel,
 [data-theme="light"] .card {
   background-color: var(--ch-surface-card-light) !important;
   border: 1px solid var(--ch-border-light) !important;
@@ -110,164 +114,179 @@ body:not(.darkmode) .panel,
 }
 
 /* --------------------------------------------------------------------------
-   4. COMPREHENSIVE DARK MODE HIGH-CONTRAST OVERRIDES
+   4. COMPREHENSIVE DARK MODE HIGH-CONTRAST OVERRIDES (body.body__dark)
    -------------------------------------------------------------------------- */
+body.body__dark,
 body.darkmode,
 html.dark body,
 html[data-bs-theme="dark"] body,
 [data-theme="dark"] body,
 body[data-theme="dark"],
-.darkmode {
+.body__dark {
   background-color: #0b0e1a !important;
   color: #e2e8f0 !important;
 }
 
 /* Dark Mode Canvas Containers */
+body.body__dark #mainpagewrapper,
+body.body__dark .header,
+body.body__dark .homepage__main__wrapper,
+body.body__dark .main__page__content,
+body.body__dark .full__with__section,
+body.body__dark .page__container,
+body.body__dark .hero-section,
+body.body__dark .promo-slider-banner,
+body.body__dark .full-page-wrapper,
+body.darkmode #mainpagewrapper,
 body.darkmode .header,
-body.darkmode .homepage__main__wrapper,
-body.darkmode .main__page__content,
-body.darkmode .full__with__section,
-body.darkmode .page__container,
-body.darkmode .hero-section,
-body.darkmode .promo-slider-banner,
-body.darkmode .full-page-wrapper,
-body.darkmode #mainpagewrapper {
+body.darkmode .homepage__main__wrapper {
   background-color: #0b0e1a !important;
   color: #e2e8f0 !important;
 }
 
 /* Dark Mode Headings & Titles across ALL sections */
+body.body__dark h1, body.body__dark h2, body.body__dark h3, body.body__dark h4, body.body__dark h5, body.body__dark h6,
+body.body__dark .h1, body.body__dark .h2, body.body__dark .h3, body.body__dark .h4, body.body__dark .h5, body.body__dark .h6,
+body.body__dark .title, body.body__dark .section-title, body.body__dark .main-title,
+body.body__dark .section__title, body.body__dark .element__title,
+body.body__dark .sub-title, body.body__dark .subtitle, body.body__dark .section__subtitle,
+body.body__dark .header-text, body.body__dark .heading-text,
+body.body__dark .announcement__title, body.body__dark .sub__title,
+body.body__dark .marketconnect-title, body.body__dark .mc-title,
 body.darkmode h1, body.darkmode h2, body.darkmode h3, body.darkmode h4, body.darkmode h5, body.darkmode h6,
-body.darkmode .h1, body.darkmode .h2, body.darkmode .h3, body.darkmode .h4, body.darkmode .h5, body.darkmode .h6,
-body.darkmode .title, body.darkmode .section-title, body.darkmode .main-title,
-body.darkmode .section__title, body.darkmode .element__title,
-body.darkmode .sub-title, body.darkmode .subtitle, body.darkmode .section__subtitle,
-body.darkmode .header-text, body.darkmode .heading-text,
-body.darkmode .announcement__title, body.darkmode .sub__title,
-body.darkmode .marketconnect-title, body.darkmode .mc-title {
+body.darkmode .section__title, body.darkmode .announcement__title {
   color: #ffffff !important;
 }
 
 /* Dark Mode Body Texts, Paragraphs & Labels */
+body.body__dark p, body.body__dark span, body.body__dark div, body.body__dark li, body.body__dark small, body.body__dark label,
 body.darkmode p, body.darkmode span, body.darkmode div, body.darkmode li, body.darkmode small, body.darkmode label {
-  color: #cbd5e1;
+  color: #cbd5e1 !important;
 }
 
 /* Dark Mode Links & TLD badges (.com, .net, .org) */
-body.darkmode a,
-body.darkmode .tld-item,
-body.darkmode .tld-name,
-body.darkmode .domain-tld,
-body.darkmode .coodiv-text-primary {
+body.body__dark a,
+body.body__dark .tld-item,
+body.body__dark .tld-name,
+body.body__dark .domain-tld,
+body.body__dark .coodiv-text-primary,
+body.darkmode a {
   color: #C4EE18 !important;
 }
 
-body.darkmode a:hover {
+body.body__dark a:hover {
   color: #B8D61A !important;
 }
 
 /* Dark Mode MarketConnect Tabs & Promo Navigation */
-body.darkmode .promo-slider-banner-nav,
-body.darkmode .promo-slider-banner-nav .nav-link,
-body.darkmode .marketconnect-banner-item,
-body.darkmode .nav-tabs .nav-link {
+body.body__dark .promo-slider-banner-nav,
+body.body__dark .promo-slider-banner-nav .nav-link,
+body.body__dark .marketconnect-banner-item,
+body.body__dark .nav-tabs .nav-link,
+body.darkmode .promo-slider-banner-nav .nav-link {
   background-color: #13182e !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-body.darkmode .promo-slider-banner-nav .nav-link *,
-body.darkmode .marketconnect-banner-item * {
+body.body__dark .promo-slider-banner-nav .nav-link *,
+body.body__dark .marketconnect-banner-item * {
   color: #ffffff !important;
 }
 
-body.darkmode .promo-slider-banner-nav .nav-link.active,
-body.darkmode .nav-tabs .nav-link.active,
-body.darkmode .marketconnect-banner-item.active {
+body.body__dark .promo-slider-banner-nav .nav-link.active,
+body.body__dark .nav-tabs .nav-link.active,
+body.body__dark .marketconnect-banner-item.active {
   background-color: #1e2645 !important;
   border-color: #C4EE18 !important;
   color: #C4EE18 !important;
 }
 
-body.darkmode .promo-slider-banner-nav .nav-link.active *,
-body.darkmode .marketconnect-banner-item.active * {
+body.body__dark .promo-slider-banner-nav .nav-link.active *,
+body.body__dark .marketconnect-banner-item.active * {
   color: #C4EE18 !important;
 }
 
 /* Dark Mode Cards, Panels, 4 Infrastructure Pillars & Announcement Boxes */
+body.body__dark .card,
+body.body__dark .panel,
+body.body__dark .box,
+body.body__dark .feature-box,
+body.body__dark .promo-box,
+body.body__dark .announcement-single-item,
+body.body__dark .single__announcement__item,
+body.body__dark .circular-card-list__item,
+body.body__dark .circular-card-list__item .card,
+body.body__dark .mc-banner,
+body.body__dark .promo__banner__item,
+body.body__dark .domain-search-bg,
+body.body__dark .front-products .product-card,
+body.body__dark .main__homepage__services__grid .main__homepage__services__grid__element,
 body.darkmode .card,
 body.darkmode .panel,
-body.darkmode .box,
-body.darkmode .feature-box,
-body.darkmode .promo-box,
-body.darkmode .announcement-single-item,
-body.darkmode .single__announcement__item,
-body.darkmode .circular-card-list__item,
-body.darkmode .circular-card-list__item .card,
-body.darkmode .mc-banner,
-body.darkmode .promo__banner__item,
-body.darkmode .domain-search-bg,
-body.darkmode .front-products .product-card {
+body.darkmode .circular-card-list__item .card {
   background-color: #13182e !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #f1f5f9 !important;
 }
 
-body.darkmode .card *,
-body.darkmode .panel *,
-body.darkmode .circular-card-list__item *,
-body.darkmode .single__announcement__item * {
+body.body__dark .card *,
+body.body__dark .panel *,
+body.body__dark .circular-card-list__item *,
+body.body__dark .single__announcement__item * {
   color: #f1f5f9 !important;
 }
 
-body.darkmode .single__announcement__item h5,
-body.darkmode .single__announcement__item a.announcement__title {
+body.body__dark .single__announcement__item h5,
+body.body__dark .single__announcement__item a.announcement__title {
   color: #ffffff !important;
 }
 
 /* Dark Mode Sidebar Navigation */
-body.darkmode .sidebar,
-body.darkmode .sidebar__container,
-body.darkmode .minimal__sidebar {
+body.body__dark .sidebar,
+body.body__dark .sidebar__container,
+body.body__dark .minimal__sidebar {
   background-color: #090c17 !important;
   border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-body.darkmode .sidebar__item,
-body.darkmode .side__bar__item__text,
-body.darkmode .side__bar__item__icon,
-body.darkmode .sidebar a {
+body.body__dark .sidebar__item,
+body.body__dark .side__bar__item__text,
+body.body__dark .side__bar__item__icon,
+body.body__dark .sidebar a {
   color: #cbd5e1 !important;
 }
 
-body.darkmode .sidebar__item:hover,
-body.darkmode .sidebar__item.active {
+body.body__dark .sidebar__item:hover,
+body.body__dark .sidebar__item.active {
   color: #C4EE18 !important;
   background-color: rgba(196, 238, 24, 0.1) !important;
 }
 
-body.darkmode .sidebar__item:hover .side__bar__item__icon,
-body.darkmode .sidebar__item.active .side__bar__item__icon {
+body.body__dark .sidebar__item:hover .side__bar__item__icon,
+body.body__dark .sidebar__item.active .side__bar__item__icon {
   color: #C4EE18 !important;
 }
 
 /* Dark Mode Footer (Uniform Dark Canvas) */
+body.body__dark .main__footer__wrapper,
+body.body__dark .bottom__footer__wrapper,
+body.body__dark footer,
+body.body__dark .footer,
 body.darkmode .main__footer__wrapper,
-body.darkmode .bottom__footer__wrapper,
-body.darkmode footer,
-body.darkmode .footer {
+body.darkmode .bottom__footer__wrapper {
   background-color: #070a14 !important;
   color: #94a3b8 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-body.darkmode .main__footer__wrapper *,
-body.darkmode .bottom__footer__wrapper * {
+body.body__dark .main__footer__wrapper *,
+body.body__dark .bottom__footer__wrapper * {
   color: #94a3b8 !important;
 }
 
-body.darkmode .main__footer__wrapper a:hover,
-body.darkmode .bottom__footer__wrapper a:hover {
+body.body__dark .main__footer__wrapper a:hover,
+body.body__dark .bottom__footer__wrapper a:hover {
   color: #C4EE18 !important;
 }
 
