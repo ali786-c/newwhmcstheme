@@ -124,9 +124,10 @@ html[data-theme="light"] .card {
   width: auto !important;
 }
 
-/* Dark Mode (html data-theme="dark" OR body.darkmode OR html.dark): SHOW light logo (white text), HIDE dark logo (navy text) */
+/* Dark Mode (html data-theme="dark" OR body.darkmode OR body.body__dark): SHOW light logo (white text), HIDE dark logo (navy text) */
 html[data-theme="dark"] .cloudhoste-logo-light,
 body.darkmode .cloudhoste-logo-light,
+body.body__dark .cloudhoste-logo-light,
 html.dark .cloudhoste-logo-light {
   display: inline-block !important;
   height: 38px !important;
@@ -135,18 +136,20 @@ html.dark .cloudhoste-logo-light {
 
 html[data-theme="dark"] .cloudhoste-logo-dark,
 body.darkmode .cloudhoste-logo-dark,
+body.body__dark .cloudhoste-logo-dark,
 html.dark .cloudhoste-logo-dark {
   display: none !important;
 }
 
 /* ==========================================================================
-   Comprehensive High-Contrast Dark Mode Overrides (HTML data-theme="dark")
+   Comprehensive High-Contrast Dark Mode Overrides
    ========================================================================== */
 
 /* Dark Mode Background Canvas */
 html[data-theme="dark"],
 html[data-theme="dark"] body,
 body.darkmode,
+body.body__dark,
 html.dark body {
   background-color: #0b0e1a !important;
   color: #e2e8f0 !important;
@@ -155,6 +158,8 @@ html.dark body {
 /* Dark Mode Headings & Subtitles */
 html[data-theme="dark"] h1, html[data-theme="dark"] h2, html[data-theme="dark"] h3, 
 html[data-theme="dark"] h4, html[data-theme="dark"] h5, html[data-theme="dark"] h6,
+body.darkmode h1, body.darkmode h2, body.darkmode h3, body.darkmode h4, body.darkmode h5, body.darkmode h6,
+body.body__dark h1, body.body__dark h2, body.body__dark h3, body.body__dark h4, body.body__dark h5, body.body__dark h6,
 html[data-theme="dark"] .h1, html[data-theme="dark"] .h2, html[data-theme="dark"] .h3, 
 html[data-theme="dark"] .h4, html[data-theme="dark"] .h5, html[data-theme="dark"] .h6,
 html[data-theme="dark"] .title, html[data-theme="dark"] .section-title, html[data-theme="dark"] .main-title,
@@ -174,7 +179,9 @@ html[data-theme="dark"] li,
 html[data-theme="dark"] small, 
 html[data-theme="dark"] label,
 html[data-theme="dark"] td,
-html[data-theme="dark"] th {
+html[data-theme="dark"] th,
+body.darkmode p, body.darkmode span, body.darkmode div:not(.btn), body.darkmode li, body.darkmode label,
+body.body__dark p, body.body__dark span, body.body__dark div:not(.btn), body.body__dark li, body.body__dark label {
   color: #cbd5e1 !important;
 }
 
