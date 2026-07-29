@@ -8,36 +8,50 @@
 {$headoutput}
 	<script>
 	function modeSwitcher() {
-		var currentTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light';
-		var newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+		var isDark = document.documentElement.getAttribute('data-theme') === 'dark' || 
+					 (document.body && document.body.classList.contains('body__dark')) ||
+					 (document.body && document.body.classList.contains('darkmode'));
 		
-		document.documentElement.setAttribute('data-theme', newTheme);
-		localStorage.setItem('theme', newTheme);
-
-		if (newTheme === 'dark') {
-			document.body.classList.add('darkmode');
-			document.body.classList.add('body__dark');
+		if (isDark) {
+			document.documentElement.removeAttribute('data-theme');
+			document.documentElement.setAttribute('data-theme', 'light');
+			if (document.body) {
+				document.body.classList.remove('body__dark');
+				document.body.classList.remove('darkmode');
+			}
+			localStorage.setItem('theme', 'light');
 		} else {
-			document.body.classList.remove('darkmode');
-			document.body.classList.remove('body__dark');
+			document.documentElement.setAttribute('data-theme', 'dark');
+			if (document.body) {
+				document.body.classList.add('body__dark');
+				document.body.classList.add('darkmode');
+			}
+			localStorage.setItem('theme', 'dark');
 		}
 	}
 
 	(function() {
 		var savedTheme = localStorage.getItem('theme');
-		if (savedTheme === "dark") {
+		if (savedTheme === 'dark') {
 			document.documentElement.setAttribute('data-theme', 'dark');
-			if (document.body) {
-				document.body.classList.add('darkmode');
-				document.body.classList.add('body__dark');
-			} else {
-				window.addEventListener('DOMContentLoaded', function() {
-					document.body.classList.add('darkmode');
+			var applyBodyDark = function() {
+				if (document.body) {
 					document.body.classList.add('body__dark');
-				});
-			}
-		} else if (savedTheme === "light") {
+					document.body.classList.add('darkmode');
+				}
+			};
+			applyBodyDark();
+			window.addEventListener('DOMContentLoaded', applyBodyDark);
+		} else if (savedTheme === 'light') {
 			document.documentElement.setAttribute('data-theme', 'light');
+			var applyBodyLight = function() {
+				if (document.body) {
+					document.body.classList.remove('body__dark');
+					document.body.classList.remove('darkmode');
+				}
+			};
+			applyBodyLight();
+			window.addEventListener('DOMContentLoaded', applyBodyLight);
 		}
 	})();
 	</script>

@@ -186,11 +186,15 @@ body.body__dark p, body.body__dark span, body.body__dark div:not(.btn), body.bod
 }
 
 /* Dark Mode Links */
-html[data-theme="dark"] a:not(.btn) {
+html[data-theme="dark"] a:not(.btn),
+body.body__dark a:not(.btn),
+body.darkmode a:not(.btn) {
   color: #818cf8 !important;
 }
 
-html[data-theme="dark"] a:not(.btn):hover {
+html[data-theme="dark"] a:not(.btn):hover,
+body.body__dark a:not(.btn):hover,
+body.darkmode a:not(.btn):hover {
   color: var(--ch-lime) !important;
 }
 
@@ -205,7 +209,9 @@ html[data-theme="dark"] .marketconnect-banner-item,
 html[data-theme="dark"] .single__announcement__item,
 html[data-theme="dark"] .mc-banner,
 html[data-theme="dark"] .promo__banner__item,
-html[data-theme="dark"] .homepage-plan-item {
+html[data-theme="dark"] .homepage-plan-item,
+body.body__dark .card, body.body__dark .panel, body.body__dark .single__announcement__item, body.body__dark .marketconnect-banner-item,
+body.darkmode .card, body.darkmode .panel, body.darkmode .single__announcement__item, body.darkmode .marketconnect-banner-item {
   background-color: #13182e !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #f1f5f9 !important;
@@ -214,7 +220,9 @@ html[data-theme="dark"] .homepage-plan-item {
 html[data-theme="dark"] .card *,
 html[data-theme="dark"] .panel *,
 html[data-theme="dark"] .single__announcement__item *,
-html[data-theme="dark"] .marketconnect-banner-item * {
+html[data-theme="dark"] .marketconnect-banner-item *,
+body.body__dark .card *, body.body__dark .panel *, body.body__dark .single__announcement__item *,
+body.darkmode .card *, body.darkmode .panel *, body.darkmode .single__announcement__item * {
   color: #f1f5f9 !important;
 }
 
