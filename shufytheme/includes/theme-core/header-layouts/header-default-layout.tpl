@@ -3,7 +3,7 @@
   <header class="header bg-white light-mode-texts fixed__header__layout">
 	  <div class="page__container">
 		  <div class="header__row d-flex justify-content-between align-items-center">
-				<div class="top__header__website__identity website__identity__sidebar {if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarheaderlogo'}d-flex{else}d-md-none d-flex{/if} align-items-center">		
+				<div class="top__header__website__identity website__identity__sidebar d-flex align-items-center">		
 					<button aria-label="sidebar toggle" class="header__burger"></button>	 
 					<a aria-label="website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
 						<img class="cloudhoste-logo-light" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
@@ -56,14 +56,6 @@
   <div class="sidebar__page__wrapper">
   <div class="sidebar minimal__sidebar {if $coodivsidebaroptions.themesidebarsettingscollapsed|default:''=='activated' || $coodivsidebaroptions.id|default:'' != '1'}{else}full__width{/if}">
 	<div class="sidebar__container">
-		{if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarsidebarlogo' || $coodivlayoutssettings.id|default:'' != '1'}
-		<div class="website__identity__sidebar d-flex align-items-center">		
-			<a aria-label="Website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
-				<img class="cloudhoste-logo-light" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
-				<img class="cloudhoste-logo-dark" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
-			</a>
-		</div>
-		{/if}
 		<button aria-label="sidebar close" class="sidebar__close"><i class="icon fal fa-times"></i></button>
 		<div class="sidebar__menu">
 		<div class="sidebar__extend__toggle"><span class="extend">Extend</span><span class="reduce">Reduce</span></div>
