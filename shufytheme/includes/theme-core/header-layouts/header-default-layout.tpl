@@ -6,7 +6,8 @@
 				<div class="top__header__website__identity website__identity__sidebar {if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarheaderlogo'}d-flex{else}d-md-none d-flex{/if} align-items-center">		
 					<button aria-label="sidebar toggle" class="header__burger"></button>	 
 					<a aria-label="website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
-						<img class="cloudhoste-brand-logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
+						<img class="cloudhoste-logo-light" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
+						<img class="cloudhoste-logo-dark" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
 					</a>
 				</div>
 				{if $coodivsettings.headeranoncement|default:''=='activated' || $coodivsettings.id|default:'' != '1'}
@@ -58,7 +59,8 @@
 		{if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarsidebarlogo' || $coodivlayoutssettings.id|default:'' != '1'}
 		<div class="website__identity__sidebar d-flex align-items-center">		
 			<a aria-label="Website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
-				<img class="cloudhoste-brand-logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
+				<img class="cloudhoste-logo-light" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
+				<img class="cloudhoste-logo-dark" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
 			</a>
 		</div>
 		{/if}

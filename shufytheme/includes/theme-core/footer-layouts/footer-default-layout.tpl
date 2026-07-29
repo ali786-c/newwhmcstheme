@@ -9,7 +9,8 @@
 					{if $coodivfootersettings.themefootersettinglogo|default:''=='activated' || $coodivfootersettings.id|default:'' != '1'}
 						<div class="footer__logo__wrapper website__identity__sidebar d-flex align-items-center justify-content-center mb-4">		
 							<a aria-label="website homepage" class="website__identity__sidebar__link text-center d-flex align-items-center gap-10" href="https://cloudhoste.eu">
-								<img class="cloudhoste-brand-logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
+								<img class="cloudhoste-logo-light" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
+								<img class="cloudhoste-logo-dark" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
 							</a>
 						</div>
 					{/if}

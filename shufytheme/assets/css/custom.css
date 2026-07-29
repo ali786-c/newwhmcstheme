@@ -110,29 +110,33 @@ html[data-theme="light"] .card {
 }
 
 /* ==========================================================================
-   Indestructible Hardcoded CloudHoste Logo System
+   Dual Logo Display System (Light Mode vs Dark Mode)
    ========================================================================== */
-.cloudhoste-brand-logo {
-  height: 38px !important;
-  max-height: 38px !important;
-  width: auto !important;
+
+/* Default / Light Mode: SHOW dark logo (navy text), HIDE light logo (white text) */
+.cloudhoste-logo-light {
+  display: none !important;
+}
+
+.cloudhoste-logo-dark {
   display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  content: url("../img/logo-dark.svg") !important;
+  height: 38px !important;
+  width: auto !important;
 }
 
-/* Light Mode: Show logo-dark.svg (Dark Navy text for white background) */
-body:not(.darkmode) .cloudhoste-brand-logo,
-html:not([data-theme="dark"]) .cloudhoste-brand-logo,
-html[data-theme="light"] .cloudhoste-brand-logo {
-  content: url("../img/logo-dark.svg") !important;
+/* Dark Mode (html data-theme="dark" OR body.darkmode OR html.dark): SHOW light logo (white text), HIDE dark logo (navy text) */
+html[data-theme="dark"] .cloudhoste-logo-light,
+body.darkmode .cloudhoste-logo-light,
+html.dark .cloudhoste-logo-light {
+  display: inline-block !important;
+  height: 38px !important;
+  width: auto !important;
 }
 
-/* Dark Mode: Show logo-light.svg (Pure White text for dark background) */
-html[data-theme="dark"] .cloudhoste-brand-logo,
-body.darkmode .cloudhoste-brand-logo {
-  content: url("../img/logo-light.svg") !important;
+html[data-theme="dark"] .cloudhoste-logo-dark,
+body.darkmode .cloudhoste-logo-dark,
+html.dark .cloudhoste-logo-dark {
+  display: none !important;
 }
 
 /* ==========================================================================
