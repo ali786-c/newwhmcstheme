@@ -6,20 +6,7 @@
 				<div class="top__header__website__identity website__identity__sidebar {if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarheaderlogo'}d-flex{else}d-md-none d-flex{/if} align-items-center">		
 					<button aria-label="sidebar toggle" class="header__burger"></button>	 
 					<a aria-label="website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
-						{if $coodivsettings.siteaslogo|default:''=='activated'}
-							<div class="website__identity__sidebar__text__logo__wrapper">
-								<span id="websiteidenditytextlogofull" class="website__identity__sidebar__text__logo__full">
-									{if $coodivsettings.customtextlogo|default:'' == null}
-										{$companyname}
-									{else}
-										{$coodivsettings.customtextlogo|default:''}
-									{/if}
-								</span>
-							</div>
-						{else}
-							<img class="image__logo__tagline white__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px;" />
-							<img class="image__logo__tagline dark__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px;" />
-						{/if}
+						<img class="cloudhoste-brand-logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
 					</a>
 				</div>
 				{if $coodivsettings.headeranoncement|default:''=='activated' || $coodivsettings.id|default:'' != '1'}
@@ -71,20 +58,7 @@
 		{if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarsidebarlogo' || $coodivlayoutssettings.id|default:'' != '1'}
 		<div class="website__identity__sidebar d-flex align-items-center">		
 			<a aria-label="Website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
-				{if $coodivsettings.siteaslogo|default:''=='activated'}
-					<div class="website__identity__sidebar__text__logo__wrapper">
-						<span id="websiteidenditytextlogofull" class="website__identity__sidebar__text__logo__full">
-							{if $coodivsettings.customtextlogo|default:'' == null}
-								{$companyname}
-							{else}
-								{$coodivsettings.customtextlogo|default:''}
-							{/if}
-						</span>
-					</div>
-				{else}
-					<img class="image__logo__tagline white__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px;" />
-					<img class="image__logo__tagline dark__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px;" />
-				{/if}
+				<img class="cloudhoste-brand-logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
 			</a>
 		</div>
 		{/if}
@@ -120,57 +94,9 @@
 				</nav>
 			</div>
 		</div>
-		{if $primarySidebar->hasChildren() || $secondarySidebar->hasChildren()}
-			<div class="full__with__section full__width__secondarysidebar__menu into__main__page__content__full__width__element {if $templatefile == 'upgrade' || $templatefile == 'upgradesummary' || $templatefile == 'complete'}full__width__secondarysidebar__menu__upgrade{/if}">
-				<div class="full__width__secondarysidebar__menu__item main__page__content d-flex align-items-start">
-					{if $primarySidebar->hasChildren() &&  $templatefile != 'viewticket'}
-						{include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
-					{/if}
-					{if $secondarySidebar->hasChildren()}
-						{include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
-					{/if}
-				</div>
-			</div>
-		{/if}
 	{/if}
-	<div class="{if $inShoppingCart}shopping__cart__main__page__content{else}main__page__content{/if}">
-	{if $templatefile == 'viewticket'}
-		{if $invalidTicketId}
-			{include file="$template/includes/alert.tpl" type="danger" title="{lang key='thereisaproblem'}" msg="{lang key='supportticketinvalid'}"}
-		{else}
-			{if $closedticket}
-				{include file="$template/includes/alert.tpl" type="warning" title="{lang key='supportticketsstatusclosed'}" msg="{lang key='supportticketclosedmsg'}"}
-			{/if}
-
-			{if $errormessage}
-				{include file="$template/includes/alert.tpl" type="error" errorshtml=$errormessage}
-			{/if}
-		{/if}
+	
+	
+	<div class="main__page__content mb-20 {if $inShoppingCart} pt-10{/if}">
 	{/if}
-	{if !$inShoppingCart && $templatefile != 'viewinvoice'} 
-		{include file="$template/includes/network-issues-notifications.tpl"}
-		{include file="$template/includes/validateuser.tpl"}
-		{include file="$template/includes/verifyemail.tpl"}
-	{/if}
-	{/if}
-	<section class="{if $templatefile == 'homepage'}homepage__main__body{else if $inShoppingCart}shopping__main__body{/if}" {if $templatefile != 'domainregister' && $templatefile != 'domaintransfer'}id="main-body"{/if}>
-		<div class="{if !$skipMainBodyContainer}{/if}">
-			{if $primarySidebar->hasChildren() &&  $templatefile == 'viewticket'}
-				<div class="row justify-content-start mt-5">
-					<div class="{if $templatefile == 'viewticket'}order-md-1 order-12{/if} col-md-3 col-12 position-relative">
-						<div class="viewticket__sidebar__data">
-							{include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
-						</div>
-					</div>
-					<div class="{if $templatefile == 'viewticket'}order-md-12 order-1{/if} col-md-9 col-12 primary-content">
-			{else}
-				<div class="row">
-					<div class="col-12 primary-content">
-			{/if}
-	{else}	
-		{if $loginpage && $coodivsettings.loginstyle|default:''=='loginstyleone' || $coodivsettings.id|default:'' != '1' || $templatefile == "clientregister" && $coodivsettings.registerstyle|default:''=='registerstyleone'}
-			{if $templatefile ne "verify-email" && $templatefile ne "password-reset-container"}
-				{include file="$template/includes/theme-core/login-sidebar.tpl"}
-			{/if}
-		{/if}
 	{/if}

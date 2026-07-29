@@ -2,34 +2,7 @@
 
 	<div class="website__identity__sidebar d-flex align-items-center justify-content-start mb-8">		
 		<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-start gap-10" href="https://cloudhoste.eu">
-			{if $coodivsettings.siteaslogo|default:''=='activated'}
-				<div class="website__identity__sidebar__text__logo__wrapper">
-					<span class="website__identity__sidebar__text__logo__first__later">
-						<span id="websiteidenditytextlogofirst">
-							{if $coodivsettings.customtextlogo|default:'' == null}
-								{$companyname}
-							{else}
-								{$coodivsettings.customtextlogo|default:''}
-							{/if}
-						</span>
-					</span>
-					<span id="websiteidenditytextlogofull" class="website__identity__sidebar__text__logo__full">
-						{if $coodivsettings.customtextlogo|default:'' == null}
-							{$companyname}
-						{else}
-							{$coodivsettings.customtextlogo|default:''}
-						{/if}
-					</span>
-				</div>
-			{else}
-				{if $coodivsettings.defaultlogolinkfull|default:''}
-					<img class="image__logo__tagline white__logo custom__website__full__logo" src="{$coodivsettings.defaultlogolinkfull|default:''}" alt="{$companyname} logo" />
-					<img class="image__logo__tagline dark__logo custom__website__full__logo" src="{$coodivsettings.darklogolinkfull|default:''}" alt="{$companyname} logo" />
-				{else}
-					<img class="image__logo__tagline white__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-light.svg" alt="{$companyname}" style="height: 38px;" />
-					<img class="image__logo__tagline dark__logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px;" />
-				{/if}
-			{/if}
+			<img class="cloudhoste-brand-logo" src="{$WEB_ROOT}/templates/{$template}/assets/img/logo-dark.svg" alt="{$companyname}" style="height: 38px; width: auto;" />
 		</a>
 	</div>
 	
