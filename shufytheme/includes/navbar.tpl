@@ -8,7 +8,7 @@
         {if $item->hasChildren()}
             <ul class="dropdown-menu{if isset($rightDrop) && $rightDrop} dropdown-menu-right{/if}">
             {foreach $item->getChildren() as $childItem}
-                {if $childItem->getClass() && in_array($childItem->getClass(), ['dropdown-divider', 'nav-divider'])}
+                {if $childItem->getLabel()|strpos:'---' !== false || ($childItem->getClass() && ($childItem->getClass()|strpos:'divider' !== false))}
                     <div class="dropdown-divider"></div>
                 {else}
                     <li menuItemName="{$childItem->getName()}" class="dropdown-item{if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}">

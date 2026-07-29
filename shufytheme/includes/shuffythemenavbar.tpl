@@ -18,13 +18,17 @@
 				<span class="sidebar__dropdown__title">{$item->getLabel()}</span>
 				<div class="sidebar__body__scrollable__element">
 					{foreach $item->getChildren() as $childItem}
-						<a href="{$childItem->getUri()}" class="sidebar__link {if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}" {if $childItem->getAttribute('target')} target="{$childItem->getAttribute('target')}"{/if}>
-							 {if $childItem->hasIcon()}
-							 <i class="{$childItem->getIcon()}"></i>
-							 {/if}
-							 {$childItem->getLabel()}
-							 {if $childItem->hasBadge()}<span class="childitem__side__bar__item__icon__badge">{$childItem->getBadge()}</span>{/if}
-						 </a>
+						{if $childItem->getLabel()|strpos:'---' !== false || ($childItem->getClass() && ($childItem->getClass()|strpos:'divider' !== false))}
+							<div class="dropdown-divider my-2"></div>
+						{else}
+							<a href="{$childItem->getUri()}" class="sidebar__link {if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}" {if $childItem->getAttribute('target')} target="{$childItem->getAttribute('target')}"{/if}>
+								 {if $childItem->hasIcon()}
+								 <i class="{$childItem->getIcon()}"></i>
+								 {/if}
+								 {$childItem->getLabel()}
+								 {if $childItem->hasBadge()}<span class="childitem__side__bar__item__icon__badge">{$childItem->getBadge()}</span>{/if}
+							 </a>
+						{/if}
 					{/foreach}
 				</div>
 			</div>
@@ -43,4 +47,3 @@
 		</a>
 	{/if}	
 {/foreach}
-
